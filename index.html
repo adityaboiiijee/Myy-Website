@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Rose Day</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #fce4ec;
+            font-family: 'Arial', sans-serif;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #c2185b;
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        .container {
+            position: relative;
+            width: 300px;
+            margin: 50px auto;
+        }
+        .soil {
+            width: 100%;
+            height: 40px;
+            background: #5d4037;
+            border-radius: 10px;
+            position: relative;
+            bottom: 0;
+        }
+        .rose {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+            opacity: 0;
+            animation: grow 3s 1.8s forwards;
+        }
+        .envelope-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 3s 4s forwards;
+        }
+        .envelope {
+            width: 150px;
+            cursor: pointer;
+        }
+        .message {
+            display: none;
+            background: white;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 400px;
+            color: #d81b60;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        @keyframes grow {
+            0% { transform: translateX(-50%) translateY(50px); opacity: 0; }
+            100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Rose Day 🌹</h1>
+    <div class="container">
+        <div class="soil"></div>
+        <img src="imagey.jpg" alt="Rose" class="rose">
+    </div>
+    <div class="envelope-container">
+        <img src="https://cdn.pixabay.com/photo/2012/04/13/19/19/envelope-33339_960_720.png" alt="Envelope" class="envelope" onclick="showMessage()">
+    </div>
+    <div id="message" class="message">
+        Even without a special someone, today is a reminder that love begins with you! 💖 You are as unique and beautiful as a rose, blooming with kindness, strength, and dreams. 🌿✨<br><br>
+        Celebrate yourself, cherish your journey, and remember—love will find you at the perfect time! 💫🌹<br><br>
+        Have a wonderful Rose Day! 🌸😊
+    </div>
+    <script>
+        function showMessage() {
+            let message = document.getElementById('message');
+            if (message.style.display === 'none' || message.style.display === '') {
+                message.style.display = 'block';
+            } else {
+                message.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
